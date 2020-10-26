@@ -1,8 +1,8 @@
 import db
 
-from sqlalchemy import Column, Integer, String, FLoat
+from sqlalchemy import Column, Integer, String, FLoat, Boolean
 
-class Users(Base):
+class Users(db.Base):
     __tablename__ = 'users'
    
 
@@ -24,7 +24,7 @@ class Users(Base):
         }
 
 
-class Likes(Base):
+class Likes(db.Base):
     __tablename__ = 'likes'
  
     id = Column(Integer, primary_key=True)
@@ -41,7 +41,7 @@ class Likes(Base):
             "post_id": self.post_id
         }
 
-class Post(Base):
+class Post(db.Base):
     __tablename__ = 'post'
  
     id = Column(Integer, primary_key=True)
@@ -63,7 +63,7 @@ class Post(Base):
             "updated_at": self.updated_at
         }
 
-class Comments(Base):
+class Comments(db.Base):
     __tablename__ = 'comments'
 
     id = Column(Integer, primary_key=True)
@@ -85,7 +85,7 @@ class Comments(Base):
             "created_at": self.created_at
             "updated_at": self.updated_at
         }
-class Followers(Base):
+class Followers(db.Base):
     __tablename__ = 'followers'
 
     id = Column(Integer, primary_key=True)
